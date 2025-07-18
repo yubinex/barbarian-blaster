@@ -64,7 +64,7 @@ path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
 path_rotation_accurate = false
-path_local = false
+path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
@@ -78,7 +78,7 @@ path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
 path_rotation_accurate = true
-path_local = false
+path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
@@ -92,13 +92,29 @@ path_interval = 0.5
 path_simplify_angle = 0.0
 path_rotation = 2
 path_rotation_accurate = true
-path_local = false
+path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
 
 [node name="Enemy" parent="Path3D" instance=ExtResource("2_5vx1e")]
 transform = Transform3D(9.38923e-05, 0, -0.99999, 0, 1, 0, 0.99999, 0, 9.38922e-05, -21.8928, 0, 6.00543)
+
+[node name="Enemy2" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0239826, 0, -0.999702, 0, 1, 0, 0.999702, 0, -0.0239826, -16.8945, 0, 6.13439)
+progress = 5.0
+
+[node name="Enemy3" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0205991, 0, -0.999777, 0, 1, 0, 0.999778, 0, -0.020599, -11.8958, 0, 6.24597)
+progress = 10.0
+
+[node name="Enemy4" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.016581, 0, -0.999852, 0, 1, 0, 0.999852, 0, -0.016581, -6.89659, 0, 6.33932)
+progress = 15.0
+
+[node name="Enemy5" parent="Path3D" instance=ExtResource("2_5vx1e")]
+transform = Transform3D(-0.0111497, 0, -0.999927, 0, 1, 0, 0.999928, 0, -0.0111497, -1.89707, 0, 6.40947)
+progress = 20.0
 
 [node name="Base" parent="." instance=ExtResource("3_eesb3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -6)
