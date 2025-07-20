@@ -14,12 +14,12 @@ The process assumes the project is already initialized as a git repository. If n
 2. **Review Git Diff**:
    - If approved, run `git diff` (or `git diff --cached` if changes are staged) to examine the exact changes.
    - Analyze the diff intelligently:
-     - Identify file types: GDScript (.gd), scenes (.tscn), resources (.tres), shaders (.gdshader), etc.
-     - Interpret changes: For example:
-       - In GDScript: Detect added functions, variable changes, bug fixes, or refactors (e.g., "Added a new method `jump()` to handle player physics.").
-       - In scenes: Note added nodes, property changes, or connections (e.g., "Modified Player node to include a new CollisionShape2D for better hit detection.").
-       - Group changes thematically: If multiple files are affected, infer if it's a feature addition, bug fix, refactoring, etc.
-     - Handle Godot-specific artifacts: Ignore temporary files like .import/ or export.cfg if they're not intended for commit.
+	 - Identify file types: GDScript (.gd), scenes (.tscn), resources (.tres), shaders (.gdshader), etc.
+	 - Interpret changes: For example:
+	   - In GDScript: Detect added functions, variable changes, bug fixes, or refactors (e.g., "Added a new method `jump()` to handle player physics.").
+	   - In scenes: Note added nodes, property changes, or connections (e.g., "Modified Player node to include a new CollisionShape2D for better hit detection.").
+	   - Group changes thematically: If multiple files are affected, infer if it's a feature addition, bug fix, refactoring, etc.
+	 - Handle Godot-specific artifacts: Ignore temporary files like .import/ or export.cfg if they're not intended for commit.
    - Present a summarized interpretation of the changes (e.g., "The diff shows additions to movement logic in player.gd, likely improving jump mechanics, and UI tweaks in main.tscn.").
    - Ask the user: "Does this summary match what you did? Any specific details to note for the commit message? Proceed to staging? (Yes/No/Provide details)"
 
@@ -32,21 +32,21 @@ The process assumes the project is already initialized as a git repository. If n
 4. **Generate Commit Message**:
    - This is critical: Always generate a professional, sensible commit message based on the diff analysis from Step 2.
    - Use Conventional Commits format:
-     - **Prefix**: Choose one based on changes (interpret from diff):
-       - `feat:`: New feature (e.g., adding a new enemy type or mechanic).
-       - `fix:`: Bug fix (e.g., correcting collision issues).
-       - `chore:`: Maintenance (e.g., updating dependencies or .gitignore).
-       - `docs:`: Documentation changes (e.g., updating README or comments).
-       - `style:`: Formatting/whitespace (no code change).
-       - `refactor:`: Code restructuring (no feature/bug change).
-       - `perf:`: Performance improvements.
-       - `test:`: Adding/modifying tests.
-       - `ci:`: CI config changes.
-     - **Subject**: Concise summary (50 chars max), imperative mood (e.g., "Add jump mechanic to player").
-     - **Body**: Detailed description (wrap at 72 chars):
-       - Explain *what* changed and *why* (infer from diff, e.g., "Updated player.gd to include gravity adjustments for smoother jumps. This resolves issue with double-jumping glitches. Also tweaked animation in player.tscn.").
-       - Reference Godot specifics: Mention nodes, signals, resources affected.
-       - If applicable, add footer: e.g., "Closes #issue" if linked to an issue.
+	 - **Prefix**: Choose one based on changes (interpret from diff):
+	   - `feat:`: New feature (e.g., adding a new enemy type or mechanic).
+	   - `fix:`: Bug fix (e.g., correcting collision issues).
+	   - `chore:`: Maintenance (e.g., updating dependencies or .gitignore).
+	   - `docs:`: Documentation changes (e.g., updating README or comments).
+	   - `style:`: Formatting/whitespace (no code change).
+	   - `refactor:`: Code restructuring (no feature/bug change).
+	   - `perf:`: Performance improvements.
+	   - `test:`: Adding/modifying tests.
+	   - `ci:`: CI config changes.
+	 - **Subject**: Concise summary (50 chars max), imperative mood (e.g., "Add jump mechanic to player").
+	 - **Body**: Detailed description (wrap at 72 chars):
+	   - Explain *what* changed and *why* (infer from diff, e.g., "Updated player.gd to include gravity adjustments for smoother jumps. This resolves issue with double-jumping glitches. Also tweaked animation in player.tscn.").
+	   - Reference Godot specifics: Mention nodes, signals, resources affected.
+	   - If applicable, add footer: e.g., "Closes #issue" if linked to an issue.
    - Present the proposed message to the user (e.g., in full format for `git commit -m`).
    - Ask the user: "Approve this commit message? Edit it? Proceed to commit? (Yes/No/Suggest edit)"
 
