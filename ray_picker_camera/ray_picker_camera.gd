@@ -19,11 +19,15 @@ func _process(_delta: float) -> void:
 	ray_cast_3d.force_raycast_update()
 
 	if ray_cast_3d.is_colliding():
+		Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 		var collider = ray_cast_3d.get_collider()
 
 		if collider is GridMap:
-			var collision_point: Vector3 = ray_cast_3d.get_collision_point()
-			var cell_coordinates: Vector3i = grid_map.local_to_map(collision_point)
+			if Input.is_action_just_pressed("click"):
+				var collision_point: Vector3 = ray_cast_3d.get_collision_point()
+				var cell_coordinates: Vector3i = grid_map.local_to_map(collision_point)
 
-			if grid_map.get_cell_item(cell_coordinates) == TileType.FREE_SPACE:
-				grid_map.set_cell_item(cell_coordinates, TileType.TURRET_SPACE)
+				if grid_map.get_cell_item(cell_coordinates) == TileType.FREE_SPACE:
+					grid_map.set_cell_item(cell_coordinates, TileType.TURRET_SPACE)
+	else:
+		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
