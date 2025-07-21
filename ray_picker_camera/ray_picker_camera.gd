@@ -3,6 +3,7 @@ extends Camera3D
 
 @export var raycast_distance: float = 100.0
 @export var grid_map: GridMap
+@export var turret_manager: Turret
 
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
@@ -29,5 +30,7 @@ func _process(_delta: float) -> void:
 
 				if grid_map.get_cell_item(cell_coordinates) == TileType.FREE_SPACE:
 					grid_map.set_cell_item(cell_coordinates, TileType.TURRET_SPACE)
+					var tile_position: Vector3 = grid_map.map_to_local(cell_coordinates)
+					turret_manager.build_turret(tile_position)
 	else:
 		Input.set_default_cursor_shape(Input.CURSOR_ARROW)
