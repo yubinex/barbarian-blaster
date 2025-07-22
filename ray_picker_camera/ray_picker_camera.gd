@@ -3,7 +3,7 @@ extends Camera3D
 
 @export var raycast_distance: float = 100.0
 @export var grid_map: GridMap
-@export var turret_manager: Turret
+@export var turret_manager: TurretManager
 
 @onready var ray_cast_3d: RayCast3D = $RayCast3D
 
