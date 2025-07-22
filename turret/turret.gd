@@ -10,7 +10,7 @@ var enemy_path: Path3D
 
 
 func _physics_process(_delta: float) -> void:
-	var enemy := enemy_path.get_children().back() as Enemy
+	var enemy = enemy_path.get_children().back()
 	look_at(enemy.global_position, Vector3.UP, true)
 
 
