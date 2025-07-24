@@ -7,12 +7,16 @@ extends PathFollow3D
 
 var current_health: int:
 	set(health_in):
+		if health_in < current_health:
+			animation_player.play("take_damange")
+
 		current_health = health_in
 
 		if current_health < 1:
 			queue_free()
 
 @onready var base: Node3D = get_tree().get_first_node_in_group("base")
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 
 func _ready() -> void:
