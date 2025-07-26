@@ -7,7 +7,6 @@ extends Node3D
 var current_health: int:
 	set(health_in):
 		current_health = health_in
-		print("health was updated")
 		label_3d.text = str(current_health) + "/" + str(max_health)
 		label_3d.modulate = Color.RED.lerp(
 			Color.WHITE,
@@ -25,4 +24,3 @@ func _ready() -> void:
 
 func take_damage() -> void:
 	current_health -= 1
-	print("damage dealt to base")
