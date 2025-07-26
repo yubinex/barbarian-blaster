@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://62xunxaj14tt"]
+
+[ext_resource type="Script" uid="uid://dn33mmnoipoit" path="res://difficulty_manager/difficulty_manager.gd" id="1_yfgee"]
+
+[sub_resource type="Curve" id="Curve_yfgee"]
+_limits = [0.25, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 2), 0.0, -1.75, 0, 1, Vector2(1, 0.25), -1.75, 0.0, 1, 0]
+point_count = 2
+
+[node name="DifficultyManager" type="Node"]
+script = ExtResource("1_yfgee")
+spawn_time_curve = SubResource("Curve_yfgee")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
