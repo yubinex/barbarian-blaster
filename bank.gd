@@ -14,3 +14,4 @@ var gold: int:
 
 func _ready() -> void:
 	gold = starting_gold
+	Engine.time_scale = 5
