@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d2e48pkiue05b"]
+[gd_scene load_steps=19 format=3 uid="uid://d2e48pkiue05b"]
 
 [ext_resource type="PackedScene" uid="uid://b7k1eviu1hqnv" path="res://ray_picker_camera/ray_picker_camera.tscn" id="1_3o4py"]
 [ext_resource type="MeshLibrary" uid="uid://bjxqm8dl62vpq" path="res://mesh_libraries/space_library.tres" id="1_bo3yr"]
@@ -25,7 +25,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo3yr"]
-albedo_color = Color(0.258824, 0.258824, 0.258824, 1)
+albedo_color = Color(0.560784, 0.6, 0.301961, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_bo3yr"]
 _data = {
@@ -33,6 +33,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
 point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ykwpl"]
+albedo_color = Color(0.310617, 0.310617, 0.310617, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_2elnx"]
 font_size = 64
@@ -53,7 +56,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_5vx1e")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
+[node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 size = Vector3(100, 2, 100)
 material = SubResource("StandardMaterial3D_bo3yr")
@@ -68,7 +71,7 @@ mesh_library = ExtResource("1_bo3yr")
 cell_size = Vector3(4, 4, 4)
 cell_center_y = false
 data = {
-"cells": PackedInt32Array(65535, 65534, 0, 65535, 2, 0, 65531, 65535, 0, 4, 65535, 0, 65531, 65534, 0, 65532, 65534, 0, 3, 2, 0, 4, 2, 0, 65531, 2, 0, 65532, 2, 0, 65531, 0, 0, 65534, 65534, 0, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 0, 4, 0, 0, 4, 1, 0, 65534, 2, 0, 65533, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 65532, 65535, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0)
+"cells": PackedInt32Array(65535, 65534, 0, 65535, 2, 0, 65531, 65535, 1441794, 4, 65535, 0, 65531, 65534, 655362, 65532, 65534, 1048578, 3, 2, 0, 4, 2, 1048578, 65531, 2, 1048578, 65532, 2, 0, 65531, 0, 3, 65534, 65534, 1048579, 0, 65534, 0, 1, 65534, 0, 2, 65534, 0, 3, 65534, 0, 4, 65534, 1048579, 4, 0, 0, 4, 1, 2, 65534, 2, 1441794, 65533, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 3, 65532, 65535, 0, 65532, 0, 0, 65533, 0, 655363, 65534, 0, 0, 65535, 0, 0, 0, 0, 1441795, 1, 0, 0, 2, 0, 0, 65528, 65531, 2, 65528, 65532, 2, 65528, 65533, 2, 65528, 65534, 2, 65528, 65535, 2, 65528, 0, 2, 65529, 65531, 2, 65529, 65532, 2, 65529, 65533, 2, 65529, 65534, 2, 65529, 65535, 2, 65529, 0, 2, 65530, 65531, 2, 65530, 65532, 2, 65530, 65533, 2, 65530, 65534, 2, 65530, 65535, 2, 65530, 0, 2, 65531, 65531, 2, 65531, 65532, 2, 65531, 65533, 2, 65532, 65531, 2, 65532, 65532, 2, 65532, 65533, 2, 65533, 65531, 2, 65533, 65532, 2, 65533, 65533, 2, 65534, 65531, 2, 65534, 65532, 2, 65534, 65533, 2, 65535, 65531, 2, 65535, 65532, 2, 65535, 65533, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 1, 65531, 2, 1, 65532, 2, 1, 65533, 2, 2, 65531, 2, 2, 65532, 2, 2, 65533, 2, 3, 65531, 2, 3, 65532, 2, 3, 65533, 2, 4, 65531, 2, 4, 65532, 2, 4, 65533, 2, 5, 65531, 2, 5, 65532, 2, 5, 65533, 2, 6, 65531, 2, 6, 65532, 2, 6, 65533, 2, 7, 65531, 2, 7, 65532, 2, 7, 65533, 2, 5, 65534, 2, 5, 65535, 2, 5, 0, 2, 6, 65534, 2, 6, 65535, 2, 6, 0, 2, 7, 65534, 2, 7, 65535, 2, 7, 0, 2)
 }
 
 [node name="EnemyPath" type="Path3D" parent="." node_paths=PackedStringArray("difficulty_manager", "victory_layer")]
@@ -91,6 +94,7 @@ path_local = true
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+material = SubResource("StandardMaterial3D_ykwpl")
 
 [node name="LeftEdge" type="CSGPolygon3D" parent="EnemyPath"]
 polygon = PackedVector2Array(-1.1, 0, -1.1, 0.15, -0.9, 0.15, -0.9, 0)
