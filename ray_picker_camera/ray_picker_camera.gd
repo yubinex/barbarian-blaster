@@ -27,7 +27,7 @@ func _process(_delta: float) -> void:
 			var collider = ray_cast_3d.get_collider()
 
 			if collider is GridMap:
-				if Input.is_action_just_pressed("click"):
+				if Input.is_action_pressed("click"):
 					var collision_point: Vector3 = ray_cast_3d.get_collision_point()
 					var cell_coordinates: Vector3i = grid_map.local_to_map(collision_point)
 
