@@ -48,7 +48,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Curve" id="Curve_xjg0i"]
 _limits = [10.0, 150.0, 0.0, 1.0]
-_data = [Vector2(0, 10), 0.0, 140.0, 0, 1, Vector2(1, 150), 140.0, 0.0, 1, 0]
+_data = [Vector2(0, 40), 0.0, 110.0, 0, 1, Vector2(1, 150), 110.0, 0.0, 1, 0]
 point_count = 2
 
 [node name="BaseLevel" type="Node3D"]
